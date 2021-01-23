@@ -10,7 +10,7 @@
 }
 
 .shopping {
-  width: 56%;
+  width: 65%;
   background-color: #DDD;
   padding: 5px 20px;
   position: absolute;
@@ -20,8 +20,8 @@
 }
 
 .shopping .add .add-data {
-  display: flex;
-  align-items: center;
+  display: inline-block;
+
 }
 .shopping .btn {
   background-color: black;
