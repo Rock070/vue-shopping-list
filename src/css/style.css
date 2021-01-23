@@ -1,12 +1,9 @@
-/* Add "scoped" attribute to limit CSS to this component only  */
-
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color: black;
   font-size: 20px;
-  margin-top: 60px;
 }
 
 .shopping {
@@ -15,38 +12,77 @@
   padding: 5px 20px;
   position: absolute;
   left: 50%;
-  top: 20%;
+  top: 0%;
+  margin: 10px 0px;
   transform: translate(-50%, 0);
 }
 
-.shopping .add .add-data {
-  display: inline-block;
-
-}
 .shopping .btn {
-  background-color: black;
-  color: white;
-  padding: 5px 35px;
+  display: inline-block;
+  width: 130px;
+  padding: 5px 0px;
+  text-align: center;
   margin-left: 15px;
   border-radius: 8px;
+  background-color: black;
+  color: white;
+  cursor: pointer;
+  
+}
+.shopping .btn:focus {
+    outline: none;
 }
 
 .shopping input {
-  
-  width: 90px;
+  display: inline-block;
+  margin-left: 8px;
+  width: 50%;
   height: 25px;
   padding: 2px 5px;
 }
 
 .shopping h3 {
   font-weight: normal;
+  margin: 23px 0px;
+  
+}
+
+
+.shopping .add .add-data {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.shopping .add .add-data span {
+  margin-right: 5px;
+}
+
+.shopping .shopping-list{
+  padding: 5px 0px;
+  max-height: 55vh;
+  overflow: scroll;
 }
 
 .shopping .shopping-list .shopping-item {
-  margin-bottom: 10px;
+  width: 100%;
+  height: 4vh;
+  text-align: center;
+  margin: 3px 0px 30px 0px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  box-sizing: border-box;
 }
 
-.shopping span {
-    margin: 5px;
-    padding: 10px;
-  }
+.shopping .shopping-list .shopping-item div {
+  border: solid 1px black;
+  margin: 0px 5px 0px 5px; 
+  padding: 5px 3px;
+  display: inline-block;
+  width: 15%;
+  height: 4vh;
+  white-space: nowrap;
+  overflow: scroll;
+
+}

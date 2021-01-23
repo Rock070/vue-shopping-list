@@ -3,27 +3,31 @@
     <div class='add'>
       <h3>新增單筆：</h3>
       <div class='add-data' >
-        <span>名稱</span>
-        <input class='name'
-          v-model="name"
-          maxlength="50"
-        />
-        <span>單價</span>
-        <input class='price'
-          v-model="price"
-          @input="price = price.replace(/[^\d]/g,'')"
-          maxlength="20"
-        />
+        <div>
+          <span>名稱</span>
+          <input v-model="name"
+            
+            maxlength="30"
+          />
+        </div>
+        <div>
+          <span>單價</span>
+          <input v-model="price"
+            @input="price = price.replace(/[^\d]/g,'')"
+            maxlength="8"
+          />
+        </div>
+        <div>
         <span>數量</span>
-        <input class='number'
-          v-model="number"
+        <input v-model="number"
           @input="number = number.replace(/[^\d]/g,'')"
-          maxlength="20"
+          maxlength="8"
         />
-        <button 
+        </div>
+        <div 
           class='btn'
           @click="addItem" 
-        >新增</button>
+        >新增</div>
       </div>
     </div>
     <div class='list'>
@@ -33,13 +37,13 @@
           v-for='item in list'
           :key='item.id'
         >
-          <span>名稱：{{item.name}}</span>
-          <span>單價：${{item.price}}</span>
-          <span>數量：{{item.number}}</span>
-          <button 
-            class='btn'
+          <div class='name'>{{item.name}}</div>
+          <div class='price'>${{item.price}}</div>
+          <div class='number'>{{item.number}}</div>
+          <div 
+            class='btn btn-del'
             @click="deleteItem(item.id)"
-          >刪除</button>
+          >刪除</div>
         </div>            
       </div>
     </div>
@@ -81,10 +85,6 @@ export default {
       },
       deleteItem(id) {
         this.list = this.list.filter(item => item.id !== id)
-      },
-      test(){
-        console.log(123)
-        console.log(this.$refs.number)
       },
     },
     computed: {
