@@ -6,7 +6,6 @@
         <div>
           <span>名稱</span>
           <input v-model="name"
-            
             maxlength="30"
           />
         </div>
@@ -33,6 +32,10 @@
     <div class='list'>
       <h3>購物清單:</h3>
       <div class='shopping-list'>
+        <div style='color: #DA2; cursor: pointer'
+          v-if="list == false">
+          目前沒有商品～
+        </div>
         <div class='shopping-item' 
           v-for='item in list'
           :key='item.id'
@@ -72,7 +75,7 @@ export default {
             alert('欄位不可為空！')
             return
           }
-          this.list.push({
+          this.list.unshift({
               id: this.num,
               name: this.name,
               price: this.price,
