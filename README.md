@@ -1,24 +1,12 @@
-# my-app
+# Vue 購物清單
 
-## Project setup
-```
-npm install
-```
+Vue: 2.6.11
+@vue/cli: 4.5.11
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
 
-### Compiles and minifies for production
-```
-npm run build
-```
+## 功能
 
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+1. 可作新增、刪除項目
+2. 名稱欄位不可超過 50 個字元
+3. 單價欄位不可超過 20 個字元、僅可輸入數字
+4. 數量欄位不可超過 20 個字元、僅可輸入數字
