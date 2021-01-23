@@ -5,15 +5,17 @@
         <div class='add-data' >
             <span>名稱</span>
             <input class='name'
-              ref='name'
+              v-model="name"
             />
             <span>單價</span>
             <input class='price'
-              ref='price'
+              v-model="price"
+              @input="price = price.replace(/[^\d]/g,'')"
             />
             <span>數量</span>
             <input class='number'
-              ref='number'
+              v-model="number"
+              @input="number = number.replace(/[^\d]/g,'')"
             />
             <button 
               class='add-btn'
@@ -51,25 +53,28 @@ export default {
   data() {
     return {
       num: 1,
-      list: []
+      list: [],
+      name: '',
+      price: '',
+      number: '',
     }
     
   },
 
   methods: {
     addItem() {
-        let name = this.$refs.name.value
-        let price = this.$refs.price.value
-        let number = this.$refs.number.value
-
-        console.log(name, price, number)
+        
+        if(!this.name || !this.price || !this.number ) {
+          alert('欄位不可為空！')
+          return
+        }
         this.list.push({
             id: this.num,
-            name, 
-            price,
-            number
+            name: this.name,
+            price: this.price,
+            number: this.number
         })
-
+        // console.log(this.price)
         this.num ++ ;
     },
     deleteItem(id) {
@@ -78,7 +83,7 @@ export default {
     test(){
       console.log(123)
       console.log(this.$refs.number)
-    }
+    },
   },
   computed: {
     countTotal() {
