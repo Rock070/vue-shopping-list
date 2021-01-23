@@ -63,6 +63,7 @@ export default {
       price: '',
       number: '',
     }
+
     
   },
 
@@ -78,7 +79,9 @@ export default {
             price: this.price,
             number: this.number
         })
-        
+        this.name = '';
+        this.price = '';
+        this.number = '';
         this.num ++ ;
     },
     deleteItem(id) {
