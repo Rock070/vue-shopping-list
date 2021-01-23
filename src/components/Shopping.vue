@@ -27,7 +27,7 @@
         </div>
     </div>
     <div class='total'>
-        <h3>總價: </h3>
+        <h3>總價: {{countTotal}}</h3>
         <div class='shopping-list' ></div>
     </div>
   </div>
@@ -64,6 +64,15 @@ export default {
       this.list = this.list.filter(item => item.id !== id)
     }
   },
+  computed: {
+    countTotal() {
+      let total = 0
+      for(let item of this.list) {
+        total += item.price * item.number
+      }
+      return total
+    }
+  }
   
   
 
