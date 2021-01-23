@@ -7,6 +7,6 @@ Vue.config.productionTip = false
 new Vue({
   render: h => h(App),
   data: {
-    message: 'Hello Vue'
+    shoppingList: []
   }
 }).$mount('#app')
